@@ -1,7 +1,10 @@
 import Card from '../components/Card/Card'
+import Layout from '../components/Layout/Layout'
 
 const Home = () => {
-  return <Card>It works</Card>
+  return (
+    <Layout><Card /></Layout>
+  )
 }
 
 export default Home

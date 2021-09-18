@@ -1,14 +1,17 @@
-import Image from 'next/image'
-import css from './Card.module.css';
+import Image from 'next/dist/client/image'
+import appa from '../../public/appa-and-aang.jpg'
+import css from './Card.module.css'
 
-function Card (props) {
+const Home = () => {
   return (
-  <>
-    <Image></Image>
-    <img className={css.img} src={props.image} alt={props.title} />
-    <div className={css.card}>{props.children}</div>
-  </>
+    <div className={css.card}>
+      <div className={css.body}>
+        <Image src={appa} alt='aang' />
+        <h1 className={css.title}>Daughter - Smother</h1>
+        <p className={css.description}>Elena we love you</p>
+      </div>
+    </div>
   )
 }
 
-export default Card; 
+export default Home
