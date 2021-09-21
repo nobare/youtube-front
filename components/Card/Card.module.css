@@ -1,15 +1,19 @@
-.card {
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
-}
-
-.card-body {
-
+.container {
+  font-family: 'Roboto';
+  background-color: white;
+  margin: 1rem;
+  box-shadow: 0 0px 8px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .title {
-
+  margin: 1rem;
 }
 
 .description {
-  
+  margin: 1rem;
 }

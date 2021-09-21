@@ -1,17 +1,14 @@
-import Image from 'next/dist/client/image'
-import appa from '../../public/appa-and-aang.jpg'
 import css from './Card.module.css'
 
-const Home = () => {
+const Card = (props) => {
   return (
-    <div className={css.card}>
-      <div className={css.body}>
-        <Image src={appa} alt='aang' />
-        <h1 className={css.title}>Daughter - Smother</h1>
-        <p className={css.description}>Elena we love you</p>
+    <div className={css.container}>
+      <div className={css.images}>
+        <img src={`https://i.ytimg.com/vi/${props.image}/mqdefault.jpg`}></img>
       </div>
+        <h2 className={css.title}> {props.title} </h2>
     </div>
   )
 }
 
-export default Home
+export default Card
