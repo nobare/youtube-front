@@ -6,7 +6,6 @@ import { useState } from 'react'
 
 const SearchBar = () => {
   
-  const fetcher = url => fetch(url).then(res => res.json())
   const [search, setSearch] = useState('')
   
   const submitInput = async () => {
