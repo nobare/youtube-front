@@ -1,18 +1,10 @@
+import axios from 'axios';
+
 export default async (req, res) => {
   try {
-    const { query } = req.body
-    const options = {
-      method: 'POST',
-      body: JSON.stringify(query),
-      headers: { 
-        'Content-Type' : 'application/json', 
-        'Accept': 'application/json',
-        'Access-Control-Allow-Origin': '*',
-      },
-    }
-    const data = await fetch('http://localhost:3003/search', options)
-  
-    console.log(data);
+    const search = req.body
+    const { data } = await axios.get('http://localhost:3003/mock')
+    //const { data } = await axios.post('http://localhost:3003/search', search)
     return res.json(data)
   
   } catch (error) {

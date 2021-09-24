@@ -1,19 +1,20 @@
-import Image from 'next/dist/client/image'
+import Image from 'next/image'
 import css from './SearchBar.module.css'
 import logo from '../../public/youtube-logo.svg.png'
-import { useState } from 'react'
+import { useRef } from 'react';
 
 
-const SearchBar = () => {
-  
-  const [search, setSearch] = useState('')
-  
-  const submitInput = async () => {
+const SearchBar = (props) => {
+  const InputRef = useRef();
 
-    const response = useSW('/api/videos', { query: search })
+  const submitHandler = (event) => {
+    event.preventDefault();
+    const enteredSearch = InputRef.current.value;
 
-    const data = await response.json();
-    console.log(data);
+    const data = {
+      query: enteredSearch
+    }
+    props.searchInput(data);
   }
 
   return (
@@ -21,11 +22,10 @@ const SearchBar = () => {
       <div className={css.image}>
         <Image src={logo} alt='aang' />
       </div>
-      <form className={css.form}>
-        <input type='text' placeholder='Search' value={search}
-        onChange={event => setSearch(event.target.value)} />
+      <form className={css.form} onSubmit={submitHandler}>
+        <input type='text' placeholder='Search' ref={InputRef} />
 
-        <button onClick={submitInput}>Submit</button>
+        <button>Submit</button>
       </form>
     </div>
   ) 

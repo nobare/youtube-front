@@ -4,9 +4,9 @@ const Card = (props) => {
   return (
     <div className={css.container}>
       <div className={css.images}>
-        <img src={`https://i.ytimg.com/vi/${props.image}/mqdefault.jpg`}></img>
+        <img src={`https://i.ytimg.com/vi/${props.id}/mqdefault.jpg`}></img>
       </div>
-        <h2 className={css.title}> {props.title} </h2>
+        <a className={css.title} href={props.id}> {props.title} </a>
     </div>
   )
 }

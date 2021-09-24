@@ -6,9 +6,8 @@ const VideoList = (props) => {
     <ul className={css.list}>
       { props.videos.map((video) => (
         <Card
-          image={video.id}
-          title={video.title}
-          description={video.description}
+          id={video.id.videoId}
+          title={video.snippet.title}
         />
       ))}
     </ul>
